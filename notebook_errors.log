@@ -1,0 +1,109 @@
+[NbConvertApp] Converting notebook AnyoneAI-Sprint-Project-01.ipynb to notebook
+Traceback (most recent call last):
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/bin/jupyter-nbconvert", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/jupyter_core/application.py", line 284, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+    app.start()
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 420, in start
+    self.convert_notebooks()
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 597, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 563, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/nbconvertapp.py", line 487, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 201, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 220, in from_file
+    return self.from_notebook_node(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/exporters/notebook.py", line 36, in from_notebook_node
+    nb_copy, resources = super().from_notebook_node(nb, resources, **kw)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 154, in from_notebook_node
+    nb_copy, resources = self._preprocess(nb_copy, resources)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/exporters/exporter.py", line 353, in _preprocess
+    nbc, resc = preprocessor(nbc, resc)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/preprocessors/base.py", line 48, in __call__
+    return self.preprocess(nb, resources)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/preprocessors/execute.py", line 103, in preprocess
+    self.preprocess_cell(cell, resources, index)
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbconvert/preprocessors/execute.py", line 124, in preprocess_cell
+    cell = self.execute_cell(cell, index, store_history=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aleare/.pyenv/versions/3.11.9/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/aleare/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+plot_order_amount_per_day_with_holidays(orders_per_day_and_holidays)
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mKeyError[39m                                  Traceback (most recent call last)
+[36mFile [39m[32m~/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py:3653[39m, in [36mIndex.get_loc[39m[34m(self, key)[39m
+[32m   3652[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m3653[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43m_engine[49m[43m.[49m[43mget_loc[49m[43m([49m[43mcasted_key[49m[43m)[49m
+[32m   3654[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+
+[36mFile [39m[32m~/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/pandas/_libs/index.pyx:147[39m, in [36mpandas._libs.index.IndexEngine.get_loc[39m[34m()[39m
+
+[36mFile [39m[32m~/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/pandas/_libs/index.pyx:176[39m, in [36mpandas._libs.index.IndexEngine.get_loc[39m[34m()[39m
+
+[36mFile [39m[32mpandas/_libs/hashtable_class_helper.pxi:7080[39m, in [36mpandas._libs.hashtable.PyObjectHashTable.get_item[39m[34m()[39m
+
+[36mFile [39m[32mpandas/_libs/hashtable_class_helper.pxi:7088[39m, in [36mpandas._libs.hashtable.PyObjectHashTable.get_item[39m[34m()[39m
+
+[31mKeyError[39m: 'order_purchase_date'
+
+The above exception was the direct cause of the following exception:
+
+[31mKeyError[39m                                  Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[22][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [43mplot_order_amount_per_day_with_holidays[49m[43m([49m[43morders_per_day_and_holidays[49m[43m)[49m
+
+[36mFile [39m[32m~/dev/anyoneai_sprint-project-1/src/plots.py:216[39m, in [36mplot_order_amount_per_day_with_holidays[39m[34m(df)[39m
+[32m    211[39m [38;5;66;03m# TODO: plot order amount per day with holidays using matplotlib.[39;00m
+[32m    212[39m [38;5;66;03m# Mark holidays with vertical lines.[39;00m
+[32m    213[39m [38;5;66;03m# Hint: use plt.axvline.[39;00m
+[32m    214[39m plt.figure(figsize=([32m15[39m, [32m6[39m))
+[32m--> [39m[32m216[39m plt.plot([43mdf[49m[43m[[49m[33;43m'[39;49m[33;43morder_purchase_date[39;49m[33;43m'[39;49m[43m][49m, df[[33m'[39m[33mAmount[39m[33m'[39m], linewidth=[32m1.5[39m, label=[33m'[39m[33mOrders per day[39m[33m'[39m)
+[32m    218[39m holidays = df[df[[33m'[39m[33mholiday[39m[33m'[39m] == [38;5;28;01mTrue[39;00m]
+[32m    219[39m [38;5;28;01mfor[39;00m date [38;5;129;01min[39;00m holidays[[33m'[39m[33morder_purchase_date[39m[33m'[39m]:
+
+[36mFile [39m[32m~/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/pandas/core/frame.py:3761[39m, in [36mDataFrame.__getitem__[39m[34m(self, key)[39m
+[32m   3759[39m [38;5;28;01mif[39;00m [38;5;28mself[39m.columns.nlevels > [32m1[39m:
+[32m   3760[39m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m._getitem_multilevel(key)
+[32m-> [39m[32m3761[39m indexer = [38;5;28;43mself[39;49m[43m.[49m[43mcolumns[49m[43m.[49m[43mget_loc[49m[43m([49m[43mkey[49m[43m)[49m
+[32m   3762[39m [38;5;28;01mif[39;00m is_integer(indexer):
+[32m   3763[39m     indexer = [indexer]
+
+[36mFile [39m[32m~/dev/anyoneai_sprint-project-1/venv/lib/python3.11/site-packages/pandas/core/indexes/base.py:3655[39m, in [36mIndex.get_loc[39m[34m(self, key)[39m
+[32m   3653[39m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m._engine.get_loc(casted_key)
+[32m   3654[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+[32m-> [39m[32m3655[39m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01merr[39;00m
+[32m   3656[39m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[32m   3657[39m     [38;5;66;03m# If we have a listlike key, _check_indexing_error will raise[39;00m
+[32m   3658[39m     [38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise[39;00m
+[32m   3659[39m     [38;5;66;03m#  the TypeError.[39;00m
+[32m   3660[39m     [38;5;28mself[39m._check_indexing_error(key)
+
+[31mKeyError[39m: 'order_purchase_date'
+

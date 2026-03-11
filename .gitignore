@@ -1,0 +1,10 @@
+dataset/
+olist.db
+olist.db-journal
+test.db
+*.db
+*.db-journal
+output.ipynb
+.ipynb_checkpoints/
+__pycache__/
+src/__pycache__/
